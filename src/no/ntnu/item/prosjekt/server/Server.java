@@ -41,30 +41,12 @@ public class Server extends Block {
 	}
 
 	public String taxiLogOn(Taxi bil) {
-		boolean eksisterer = false;
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			if (ledigeTaxier[i].getTxid() == bil.getTxid()){
-				eksisterer = true;
+				ledigeTaxier = addTaxi(ledigeTaxier, bil);
+				break;
 			}
-		}
-		
-		if (eksisterer == false){
-			Taxi[] kopi = new Taxi[ledigeTaxier.length];
-			for (int i = 0; i < ledigeTaxier.length; i++) {
-				kopi[i] = ledigeTaxier[i];
-			}
-			
-			
-			ledigeTaxier = new Taxi[kopi.length+1];
-			
-			
-			for (int i = 0; i < kopi.length; i++) {
-				ledigeTaxier[i] = kopi[i];
-			}
-			
-			ledigeTaxier[ledigeTaxier.length -1] = bil;
-		}
-		
+		}		
 		
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			System.out.println("Taxi " + ledigeTaxier[i].getTxid() + " er ledig. Plass i array er" + i);
@@ -75,14 +57,11 @@ public class Server extends Block {
 	}
 
 	public String taxiLogOut(Taxi bil) {
-		boolean eksister = false;
-		
+				
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			if(bil.getTxid() == ledigeTaxier[i].getTxid()){
-				eksister = true;
-				int plass = i;
-				
-				 
+				ledigeTaxier = fjernTaxi(ledigeTaxier, bil);
+				break;	 
 			}
 		}
 		
@@ -107,7 +86,7 @@ public class Server extends Block {
 		return bil;
 	}
 	
-	public Taxi[] fjernTaxi(Taxi[] taxiListe, Taxi taxiBil){ // metode for å fjerne en taxi
+	public Taxi[] fjernTaxi(Taxi[] taxiListe, Taxi taxiBil){ // metode for å fjerne en taxi fra en Taxi-liste
 		Taxi[] kopi = new Taxi[taxiListe.length-1];
 		int plass = 0;
 		
@@ -128,7 +107,18 @@ public class Server extends Block {
 		return kopi;
 		}
 	
+	public Taxi[] addTaxi(Taxi[] taxiListe, Taxi taxiBil){ //metode for å legge till taxi i Taxi-liste
+		Taxi[] kopi = new Taxi[taxiListe.length+1];
+		kopi[kopi.length-1] = taxiBil;
+		
+		for (int i = 0; i < kopi.length; i++) {
+			kopi[i] = taxiListe[i];
+		}
+		return kopi;
+		
 	}
+	
+}
 			
 
 	
