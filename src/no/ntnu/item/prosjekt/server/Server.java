@@ -112,7 +112,7 @@ public class Server extends Block {
 		for (int j = 0; j < taxiListe.length; j++) {
 			kopi[j] =  taxiListe[j];
 		}
-		
+		System.out.println("test");
 	}
 		
 		
