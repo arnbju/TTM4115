@@ -49,8 +49,10 @@ private JFrame frame;
 	}
 
 	public void showString(java.lang.String in) {
+		text.setText(in);
 	}
 
 	public void showState(java.lang.String in) {
+		state.setText(in);
 	}
 }

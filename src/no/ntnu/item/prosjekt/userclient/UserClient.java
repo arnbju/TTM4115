@@ -26,6 +26,7 @@ public class UserClient extends Block {
 	public Order createOrder() {
 		Order ordre = new Order(alias_id);
 		System.out.println("Create order: " + alias_id);
+		denneOrdre = ordre;
 		return ordre;
 	}
 
@@ -44,6 +45,14 @@ public class UserClient extends Block {
 
 	public String reciveQueue(Order ordre) {
 		return ordre.getQueue();
+	}
+
+	public void reciveCancel() {
+	}
+
+	public Order cancelOrder() {
+		
+		return denneOrdre;
 	}
 
 }
