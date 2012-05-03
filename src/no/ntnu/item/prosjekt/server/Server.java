@@ -8,6 +8,7 @@ import no.ntnu.item.prosjekt.taxiclient.Taxi;
 public class Server extends Block {
 	public 		Taxi[] ledigeTaxier = new Taxi[0];
 	public		Order[] ordreList = new Order[0];
+	
 
 
 	public Order confirmOrder(Order input) {
@@ -111,8 +112,26 @@ public class Server extends Block {
 		
 		return taxiListe;
 	}
-		
-		
 
-	
+	public Taxi processOrder(Order ordre) {
+		Taxi bil = ledigeTaxier[0];
+		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
+		
+		return bil;
+	}
+		
+		
+	public Order[] leggTilOrder(Order[] liste, Order ordre){
+		
+		Order[] kopi = new Order[liste.length + 1];
+		
+		for (int i = 0; i < ledigeTaxier.length; i++) {
+			kopi[i] = liste[i];
+		}
+			
+		kopi[ledigeTaxier.length -1] = ordre;
+			
+				
+		return kopi;
+	}
 }

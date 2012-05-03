@@ -31,7 +31,7 @@
             <value xmi:type="uml:LiteralString" xmi:id="_EMBAIJRDEeGHteb7Z9d8Vw" name="prefix" type="_5J44IY3vEeGI9c0uZUYdNQ" value="MSID"/>
           </argument>
           <argument xmi:type="uml:ValuePin" xmi:id="_Sq5CoJVCEeGHteb7Z9d8Vw" name="instances" type="_mVc30JBXEeGrRv3Fk7EUAw">
-            <value xmi:type="uml:LiteralInteger" xmi:id="_Sq5psJVCEeGHteb7Z9d8Vw" name="instances" type="_mVc30JBXEeGrRv3Fk7EUAw" value="1"/>
+            <value xmi:type="uml:LiteralInteger" xmi:id="_p9y0gJVaEeGHteb7Z9d8Vw" name="instances" type="_mVc30JBXEeGrRv3Fk7EUAw" value="2"/>
           </argument>
           <result xmi:id="__Wro4JRCEeGHteb7Z9d8Vw" name="create" outgoing="_5J_fcJBYEeGrRv3Fk7EUAw" inPartition="_JgXpQI3uEeGI9c0uZUYdNQ" type="_5J44IY3vEeGI9c0uZUYdNQ"/>
           <result xmi:id="__Ws3AJRCEeGHteb7Z9d8Vw" name="end" outgoing="_TI4qYJBZEeGrRv3Fk7EUAw" inPartition="_JgXpQI3uEeGI9c0uZUYdNQ"/>
@@ -48,6 +48,9 @@
           <argument xmi:id="_8iN38JUYEeGHteb7Z9d8Vw" name="start" incoming="_O6EjkJUaEeGHteb7Z9d8Vw" inPartition="_JgXpQI3uEeGI9c0uZUYdNQ"/>
           <argument xmi:type="uml:ValuePin" xmi:id="_o-1F8JUaEeGHteb7Z9d8Vw" name="prefix" type="_5J44IY3vEeGI9c0uZUYdNQ">
             <value xmi:type="uml:LiteralString" xmi:id="_o-1tAJUaEeGHteb7Z9d8Vw" name="prefix" type="_5J44IY3vEeGI9c0uZUYdNQ" value="TXID"/>
+          </argument>
+          <argument xmi:type="uml:ValuePin" xmi:id="_q6wzEJVaEeGHteb7Z9d8Vw" name="instances" type="_mVc30JBXEeGrRv3Fk7EUAw">
+            <value xmi:type="uml:LiteralInteger" xmi:id="_q6xaIJVaEeGHteb7Z9d8Vw" name="instances" type="_mVc30JBXEeGrRv3Fk7EUAw" value="2"/>
           </argument>
           <result xmi:id="_8iOfAJUYEeGHteb7Z9d8Vw" name="create" outgoing="_R-joQJUaEeGHteb7Z9d8Vw" inPartition="_JgXpQI3uEeGI9c0uZUYdNQ" type="_5J44IY3vEeGI9c0uZUYdNQ"/>
           <result xmi:id="_8iPtIJUYEeGHteb7Z9d8Vw" name="end" outgoing="_bP0_UJUaEeGHteb7Z9d8Vw" inPartition="_JgXpQI3uEeGI9c0uZUYdNQ"/>
@@ -117,6 +120,7 @@
             <transition xmi:id="_3-pGoJU6EeGHteb7Z9d8Vw" name="busy / " source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_3-ptsJU6EeGHteb7Z9d8Vw" name="free / " source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_3-qUwJU6EeGHteb7Z9d8Vw" name="free / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_HK9uwJVaEeGHteb7Z9d8Vw" name="append / orderACK+console" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
           </region>
         </ownedBehavior>
         <ownedParameter xmi:id="_HUPRc44FEeGUaqQDHfFebA" name="init"/>
@@ -455,4 +459,5 @@
   <arctis:event xmi:id="_3-ptsZU6EeGHteb7Z9d8Vw" base_Transition="_3-ptsJU6EeGHteb7Z9d8Vw" triggers="_vpu8EJU4EeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_3-qUwZU6EeGHteb7Z9d8Vw" base_Transition="_3-qUwJU6EeGHteb7Z9d8Vw" triggers="_vpu8EJU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_YL9l4ZU_EeGHteb7Z9d8Vw" base_Transition="_YL9l4JU_EeGHteb7Z9d8Vw" effects="_7lbDEJUZEeGHteb7Z9d8Vw _7lWKkJUZEeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_HK-V0JVaEeGHteb7Z9d8Vw" base_Transition="_HK9uwJVaEeGHteb7Z9d8Vw" triggers="_HUPRdI4FEeGUaqQDHfFebA" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw"/>
 </xmi:XMI>
