@@ -118,6 +118,7 @@ public class Server extends Block {
 		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
 		
 		return bil;
+		
 	}
 		
 		
