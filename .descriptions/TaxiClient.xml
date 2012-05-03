@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="TaxiClient" 
+    author="Arne Dahl Bjune" 
+    provider="NTNU" 
+    uuid="_3ZylkpUYEeGHteb7Z9d8Vw" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <block name="c0" uuid="_tWvjYZUEEeGHteb7Z9d8Vw"/>
+    </required>
+</block>
