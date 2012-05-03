@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="TaxiOrder" 
+    author="Arne Dahl Bjune" 
+    uuid="_JcAtsI3uEeGI9c0uZUYdNQ" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <block name="c0" uuid="_md-bgo4DEeGUaqQDHfFebA"/>
+        <block name="c2" uuid="_J2G1EZUHEeGHteb7Z9d8Vw"/>
+        <block name="c3" uuid="__m9lcGJOEeGrjfXhcH6cAA"/>
+    </required>
+</block>

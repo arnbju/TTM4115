@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    version="1.0.0" 
+    uuid="_JIyPsI3uEeGI9c0uZUYdNQ" 
+    >
+    <dependencies>
+        <dependency name="com.bitreactive.library.counter" uuid="_gw5scEzzEeG_68vz5_hEdQ" version="1.0.0"/>
+        <dependency name="com.bitreactive.library.counter" uuid="_gw5scEzzEeG_68vz5_hEdQ" version="1.0.0"/>
+        <dependency name="no.ntnu.item.arctis.library.sessions" uuid="_ux8bAGJMEeGZ-NNKhUo_kg" version="1.0.0"/>
+        <dependency name="no.ntnu.item.arctis.library.sessions" uuid="_ux8bAGJMEeGZ-NNKhUo_kg" version="1.0.0"/>
+        <dependency name="no.ntnu.item.arctis.library.swing" uuid="_b594QBxXEeGlCbgawtGx6g" version="1.0.0"/>
+        <dependency name="no.ntnu.item.arctis.library.swing" uuid="_b594QBxXEeGlCbgawtGx6g" version="1.0.0"/>
+        <dependency name="no.ntnu.item.taxisystemgui" uuid="_wF_0YJUDEeGHteb7Z9d8Vw" version="1.0.0"/>
+        <dependency name="test_tutorial" uuid="_fjgTAYk9EeGnL73S7VR2Zg" version="1.0.0"/>
+        <dependency name="test_tutorial" uuid="_fjgTAYk9EeGnL73S7VR2Zg" version="1.0.0"/>
+        <dependency name="test_tutorial" uuid="_fjgTAYk9EeGnL73S7VR2Zg" version="1.0.0"/>
+        <dependency name="test_tutorial" uuid="_fjgTAYk9EeGnL73S7VR2Zg" version="1.0.0"/>
+    </dependencies>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Server" 
+    author="Arne Dahl Bjune" 
+    provider="NTNU" 
+    uuid="_md-bgo4DEeGUaqQDHfFebA" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <block name="c0" uuid="__ZjgceOgEd2kaNmTXraxzw"/>
+    </required>
+</block>

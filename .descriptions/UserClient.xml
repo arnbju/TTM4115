@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="UserClient" 
+    author="Arne Dahl Bjune" 
+    provider="NTNU" 
+    uuid="_J2G1EZUHEeGHteb7Z9d8Vw" 
+    status="under construction" 
+    type="block" 
+    >
+    <required>
+        <block name="c1" uuid="_TadbwW6dEeGe59DkL1FUHw"/>
+    </required>
+</block>
