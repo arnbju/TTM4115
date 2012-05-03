@@ -108,11 +108,8 @@ public class Server extends Block {
 	}
 	
 	public Taxi[] fjernTaxi(Taxi[] taxiListe, Taxi taxiBil){ // metode for å fjerne en taxi
-		Taxi[] kopi = new Taxi[taxiListe.length-1];
-		for (int j = 0; j < taxiListe.length; j++) {
-			kopi[j] =  taxiListe[j];
-		}
 		
+		return taxiListe;
 	}
 		
 		

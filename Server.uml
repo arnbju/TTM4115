@@ -40,6 +40,7 @@
       <ownedOperation xmi:id="_FbHIQJU6EeGHteb7Z9d8Vw" name="dummy"/>
       <ownedOperation xmi:id="_wPKY0JVCEeGHteb7Z9d8Vw" name="processOrder"/>
       <ownedOperation xmi:id="_pnINgJVFEeGHteb7Z9d8Vw" name="instanceArray"/>
+      <ownedOperation xmi:id="_cD-P4JVYEeGHteb7Z9d8Vw" name="fjernTaxi"/>
       <ownedParameter xmi:id="_pVgCQY4DEeGUaqQDHfFebA" name="init"/>
       <ownedParameter xmi:id="_xmhdQI4DEeGUaqQDHfFebA" name="append" type="_aMRKcJRzEeGHteb7Z9d8Vw" isStream="true"/>
       <ownedParameter xmi:id="_9jRjII4DEeGUaqQDHfFebA" name="orderACK" type="_aMRKcJRzEeGHteb7Z9d8Vw" direction="out" isStream="true"/>
