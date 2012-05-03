@@ -75,6 +75,18 @@ public class Server extends Block {
 	}
 
 	public String taxiLogOut(Taxi bil) {
+		boolean eksister = false;
+		
+		for (int i = 0; i < ledigeTaxier.length; i++) {
+			if(bil.getTxid() == ledigeTaxier[i].getTxid()){
+				eksister = true;
+				int plass = i;
+				
+				 
+			}
+		}
+		
+		
 		return "Taxi med id: " + bil.getTxid() + " har logget av, action: " + bil.getAction();
 	}
 
@@ -94,6 +106,16 @@ public class Server extends Block {
 		bil.setAction("Dummy info");
 		return bil;
 	}
+	
+	public Taxi[] fjernTaxi(Taxi[] taxiListe, Taxi taxiBil){ // metode for å fjerne en taxi
+		Taxi[] kopi = new Taxi[taxiListe.length-1];
+		for (int j = 0; j < taxiListe.length; j++) {
+			kopi[j] =  taxiListe[j];
+		}
+		
+	}
+		
+		
 
 	
 }
