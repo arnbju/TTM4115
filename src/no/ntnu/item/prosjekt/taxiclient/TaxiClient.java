@@ -52,7 +52,7 @@ public class TaxiClient extends Block {
 	}
 
 	public String consoleString(Taxi bil) {
-		return "ID: "+ bil.getTxid() + ", Siste Action: " + bil.getAction();
+		return "ID: "+ bil.getTxid() + ", Siste Action: " + bil.getAction() + "\n" + bil.getBesked();
 	}
 
 	public String stateString(Taxi bil) {
