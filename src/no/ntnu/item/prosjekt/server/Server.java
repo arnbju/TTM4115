@@ -109,13 +109,27 @@ public class Server extends Block {
 	
 	public Taxi[] fjernTaxi(Taxi[] taxiListe, Taxi taxiBil){ // metode for å fjerne en taxi
 		Taxi[] kopi = new Taxi[taxiListe.length-1];
-		for (int j = 0; j < taxiListe.length; j++) {
-			kopi[j] =  taxiListe[j];
+		int plass = 0;
+		
+		for (int i = 0; i < taxiListe.length; i++) {
+			if (taxiBil.getTxid() == taxiListe[i].getTxid()){
+				plass = i;
+			}
 		}
-		System.out.println("test");
+		
+		for (int i = 0; i < plass; i++) {
+			kopi[i] =  taxiListe[i];
+		}
+		
+		for (int i = plass+1; i < kopi.length; i++) {
+			kopi[i] = taxiListe[i+1];
+		}
+		
+		return kopi;
+		}
+	
 	}
-		
-		
+			
 
 	
-}
+
