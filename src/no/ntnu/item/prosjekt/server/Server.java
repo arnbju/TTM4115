@@ -156,8 +156,14 @@ public class Server extends Block {
 		return bil;
 	}
 
+<<<<<<< HEAD
 	public Taxi processOrder(Order ordre) {
 		System.out.println("LedigeTaxier: " + ledigeTaxier.length + " BusyTaxier: " + busyTaxier.length + " OrderID: " +ordre.getMsid());
+=======
+	public Taxi processOrder(boolean b) {
+		
+		
+>>>>>>> 967f652781f996306154bd0cb7cc7556679985ff
 		int taxiBil = 0; //henter bilen som har vært lengst ledig
 		Taxi bil = ledigeTaxier[taxiBil];
 		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
@@ -192,5 +198,21 @@ public class Server extends Block {
 			}
 		}
 		return o;
+	}
+
+		public String idCarrier;
+		
+	public boolean isTaxiFree(Order order) {
+		if (ledigeTaxier.length > 0){
+			idCarrier = ledigeTaxier[0].getTxid();
+			return true;
+		}
+		else{
+			idCarrier = order.getMsid();
+			return false;
+		}
+	}
+
+	public void temp() {
 	}
 }
