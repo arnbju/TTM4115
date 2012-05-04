@@ -125,6 +125,7 @@
             <transition xmi:id="_Q1-UsJXMEeGHteb7Z9d8Vw" name="logOut / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_Q2Aw8JXMEeGHteb7Z9d8Vw" name="accept / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_Q2DNMJXMEeGHteb7Z9d8Vw" name="busy / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_kdH1QJXeEeGVbJ5xC55LgA" name="accept / orderACK+console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
           </region>
         </ownedBehavior>
         <ownedParameter xmi:id="_HUPRc44FEeGUaqQDHfFebA" name="init"/>
@@ -245,7 +246,6 @@
             <transition xmi:id="_PvaDYJUKEeGHteb7Z9d8Vw" name=" / requestQueueNo" source="_PvRggJUKEeGHteb7Z9d8Vw" target="_PvRggJUKEeGHteb7Z9d8Vw"/>
             <transition xmi:id="_2MgzwJUQEeGHteb7Z9d8Vw" name=" / userRequest" source="_PvRggJUKEeGHteb7Z9d8Vw" target="_PvRggJUKEeGHteb7Z9d8Vw"/>
             <transition xmi:id="_0R1aUJUREeGHteb7Z9d8Vw" name="ordreAck / " source="_PvRggJUKEeGHteb7Z9d8Vw" target="_PvRggJUKEeGHteb7Z9d8Vw"/>
-            <transition xmi:id="_VvLhkJUXEeGHteb7Z9d8Vw" name="reciveQueue / " source="_PvRggJUKEeGHteb7Z9d8Vw" target="_PvRggJUKEeGHteb7Z9d8Vw"/>
           </region>
         </ownedBehavior>
         <ownedParameter xmi:id="_yLG4AZUJEeGHteb7Z9d8Vw" name="ordreAck" type="_wBcG8JRzEeGHteb7Z9d8Vw" isStream="true"/>
@@ -409,7 +409,6 @@
   <arctis:event xmi:id="_0R1aUZUREeGHteb7Z9d8Vw" base_Transition="_0R1aUJUREeGHteb7Z9d8Vw" triggers="_yLG4AJUJEeGHteb7Z9d8Vw"/>
   <graphics:Shape xmi:id="_4wXB0JUWEeGHteb7Z9d8Vw" x="2" y="242" base_Element="_0zJlYJUWEeGHteb7Z9d8Vw" orientation="west"/>
   <arctis:event xmi:id="_KNbVoJUXEeGHteb7Z9d8Vw" base_Transition="_KNaukJUXEeGHteb7Z9d8Vw" triggers="_EEcpYJUQEeGHteb7Z9d8Vw" effects="_0zHJIJUWEeGHteb7Z9d8Vw"/>
-  <arctis:event xmi:id="_VvMIoJUXEeGHteb7Z9d8Vw" base_Transition="_VvLhkJUXEeGHteb7Z9d8Vw"/>
   <graphics:Shape xmi:id="_8iRiUJUYEeGHteb7Z9d8Vw" x="1" y="36" base_Element="_8iOfAJUYEeGHteb7Z9d8Vw" orientation="south"/>
   <graphics:Shape xmi:id="_8iRiUZUYEeGHteb7Z9d8Vw" x="108" y="18" base_Element="_8iPtIJUYEeGHteb7Z9d8Vw" orientation="south"/>
   <graphics:Shape xmi:id="_8iSJYJUYEeGHteb7Z9d8Vw" x="18" y="18" base_Element="_8iN38JUYEeGHteb7Z9d8Vw" orientation="west"/>
@@ -468,4 +467,5 @@
   <arctis:event xmi:id="_Q1-7wJXMEeGHteb7Z9d8Vw" base_Transition="_Q1-UsJXMEeGHteb7Z9d8Vw" triggers="_vptt8JU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_Q2BYAJXMEeGHteb7Z9d8Vw" base_Transition="_Q2Aw8JXMEeGHteb7Z9d8Vw" triggers="_vptt8pU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_Q2DNMZXMEeGHteb7Z9d8Vw" base_Transition="_Q2DNMJXMEeGHteb7Z9d8Vw" triggers="_vpuVAZU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_kdJqcJXeEeGVbJ5xC55LgA" base_Transition="_kdH1QJXeEeGVbJ5xC55LgA" triggers="_vptt8pU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
 </xmi:XMI>

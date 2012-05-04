@@ -110,6 +110,7 @@ public class Server extends Block {
 		int taxiBil = 0; //henter bilen som har vært lengst ledig
 		Taxi bil = ledigeTaxier[taxiBil];
 		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
+		bil.setMsid(ordre.getMsid());
 		ordre.setTxid(ledigeTaxier[taxiBil].getTxid());
 		ordreList = Helper.addOrder(ordreList, ordre);
 		System.out.println("Ordre lagt til: " + ordreList[0].getMsid());
@@ -121,7 +122,16 @@ public class Server extends Block {
 	public String toConsole(Taxi bil) {
 		return bil.getToConsole();
 	}
-		
-		
 
+	public Order taxiToOrder(Taxi taxi) {
+		String msid = taxi.getMsid();
+		Order o = ordreList[0];
+		for (int i = 0; i < ordreList.length; i++) {
+			if (ordreList[i].getMsid() == msid){
+			o = ordreList[i];
+			o.setAck("Du blir hentet av taxi " + msid);
+			}
+		}
+		return o;
+	}
 }
