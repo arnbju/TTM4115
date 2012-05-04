@@ -56,7 +56,9 @@ public class Server extends Block {
 			ledigeTaxier = Helper.addTaxi(ledigeTaxier, bil);
 			bil.setBesked("Du har blitt logget på systemet");
 			bil.setState("Free");
-		}	
+		}else{
+			bil.setBesked("Du var allerede logget på systemet");
+		}
 			
 		if(queueList.length != 0){
 			for (int i = 0; i < ordreList.length; i++) {
@@ -76,12 +78,14 @@ public class Server extends Block {
 
 	public Taxi taxiLogOut(Taxi bil) {
 				
-		for (int i = 0; i < ledigeTaxier.length; i++) {
-			if(bil.getTxid() == ledigeTaxier[i].getTxid()){
-				ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
-				
-				break;	 
-			}
+		if(bil.getState()=="Free"){
+			ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
+			bil.setState("Logged Off");
+		}else if(bil.getState()=="Busy"){
+			busyTaxier = Helper.removeTaxi(busyTaxier, bil);
+			bil.setState("Logged Off");
+		}else{
+			bil.setState("Du har den ukjente staten: " + bil.getState());
 		}
 		
 		
