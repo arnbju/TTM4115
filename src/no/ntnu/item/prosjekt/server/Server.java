@@ -157,7 +157,9 @@ public class Server extends Block {
 		return bil;
 	}
 
-	public Taxi processOrder(Order ordre) {
+	public Taxi processOrder(boolean b) {
+		
+		
 		int taxiBil = 0; //henter bilen som har vært lengst ledig
 		Taxi bil = ledigeTaxier[taxiBil];
 		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
@@ -190,5 +192,21 @@ public class Server extends Block {
 			}
 		}
 		return o;
+	}
+
+		public String idCarrier;
+		
+	public boolean isTaxiFree(Order order) {
+		if (ledigeTaxier.length > 0){
+			idCarrier = ledigeTaxier[0].getTxid();
+			return true;
+		}
+		else{
+			idCarrier = order.getMsid();
+			return false;
+		}
+	}
+
+	public void temp() {
 	}
 }
