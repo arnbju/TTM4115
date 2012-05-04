@@ -135,7 +135,7 @@
   <graphics:Shape xmi:id="_J2IDMJUHEeGHteb7Z9d8Vw" x="108" y="108" width="685" height="415" base_Element="_J2G1EpUHEeGHteb7Z9d8Vw"/>
   <arctis:esm xmi:id="_J2IqQZUHEeGHteb7Z9d8Vw" base_StateMachine="_J2IqQJUHEeGHteb7Z9d8Vw"/>
   <graphics:Shape xmi:id="_TZ_mIJUHEeGHteb7Z9d8Vw" x="0" y="306" base_Element="_SoPZEJUHEeGHteb7Z9d8Vw" orientation="west"/>
-  <graphics:Shape xmi:id="_ZNM64JUHEeGHteb7Z9d8Vw" x="126" y="288" width="127" height="55" base_Element="_ZNBUsJUHEeGHteb7Z9d8Vw" orientation="east"/>
+  <graphics:Shape xmi:id="_ZNM64JUHEeGHteb7Z9d8Vw" x="162" y="288" width="127" height="55" base_Element="_ZNBUsJUHEeGHteb7Z9d8Vw" orientation="east"/>
   <graphics:Shape xmi:id="_mP4uEJUHEeGHteb7Z9d8Vw" aux1="" base_Element="_lAN18JUHEeGHteb7Z9d8Vw"/>
   <graphics:Shape xmi:id="_muq70JUHEeGHteb7Z9d8Vw" aux1="" base_Element="_lUUdsJUHEeGHteb7Z9d8Vw"/>
   <graphics:Shape xmi:id="_qzrCUJUHEeGHteb7Z9d8Vw" x="36" y="162" base_Element="_pf8woJUHEeGHteb7Z9d8Vw" orientation="west"/>
