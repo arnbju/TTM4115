@@ -5,7 +5,7 @@ import no.ntnu.item.prosjekt.taxiclient.Taxi;
 
 public class Helper {
 	
-	public static Order[] leggTilOrder(Order[] liste, Order ordre){
+	public static Order[] addOrder(Order[] liste, Order ordre){
 		
 		Order[] kopi = new Order[liste.length + 1];
 		
@@ -14,12 +14,29 @@ public class Helper {
 		}
 			
 		kopi[liste.length -1] = ordre;
-			
 				
 		return kopi;
 	}
 	
-	public static Taxi[] fjernTaxi(Taxi[] taxiListe, Taxi taxiBil){ // metode for å fjerne en taxi fra en Taxi-liste
+	public static Order[] removeOrder(Order[] liste, Order order){
+		Order[] kopi = new Order[liste.length-1];
+		int plass = 0 ;
+		
+		for (int i = 0; i < liste.length; i++) {
+			if (liste[i].getMsid() == order.getMsid()){
+				plass = i;
+			}
+		}
+		for (int i = 0; i < plass; i++) {
+			kopi[i] = liste[i];	
+		}
+		for (int i = plass+1; i < kopi.length; i++) {
+			kopi[i] = liste[i+1];
+		}
+		return liste;
+	}
+	
+	public static Taxi[] removeTaxi(Taxi[] taxiListe, Taxi taxiBil){ // metode for å fjerne en taxi fra en Taxi-liste
 		Taxi[] kopi = new Taxi[taxiListe.length-1];
 		int plass = 0;
 		
@@ -32,11 +49,9 @@ public class Helper {
 		for (int i = 0; i < plass; i++) {
 			kopi[i] =  taxiListe[i];
 		}
-		
 		for (int i = plass+1; i < kopi.length; i++) {
 			kopi[i] = taxiListe[i+1];
 		}
-		
 		return kopi;
 		}
 	
@@ -44,10 +59,39 @@ public class Helper {
 		Taxi[] kopi = new Taxi[taxiListe.length+1];
 		kopi[kopi.length-1] = taxiBil;
 		
-		for (int i = 0; i < kopi.length; i++) {
+		for (int i = 0; i < taxiListe.length; i++) {
 			kopi[i] = taxiListe[i];
 		}
 		return kopi;
 		
+	}
+	
+	public static String[] addString(String[] liste, String string){
+		String[] kopi = new String[liste.length + 1];
+		kopi[liste.length] = string;
+		
+		for (int i = 0; i < liste.length; i++) {
+			kopi[i] = liste[i];
+		}
+		return liste;
+	}
+	
+	public static String[] removeString(String[] liste, String string){
+		String[] kopi = new String[liste.length-1];
+		int plass = 0;
+		
+		for (int i = 0; i < liste.length; i++) {
+			if (kopi[i] == liste[i]){
+				plass = i;
+				break;
+			}
+		}
+		for (int i = 0; i < plass; i++) {
+			kopi[i] = liste[i];
+		}
+		for (int i = plass+1; i < kopi.length; i++) {
+			kopi[i]=liste[i+1];
+		}
+		return kopi;
 	}
 }
