@@ -50,7 +50,7 @@
             <value xmi:type="uml:LiteralString" xmi:id="_o-1tAJUaEeGHteb7Z9d8Vw" name="prefix" type="_5J44IY3vEeGI9c0uZUYdNQ" value="TXID"/>
           </argument>
           <argument xmi:type="uml:ValuePin" xmi:id="_q6wzEJVaEeGHteb7Z9d8Vw" name="instances" type="_mVc30JBXEeGrRv3Fk7EUAw">
-            <value xmi:type="uml:LiteralInteger" xmi:id="_q6xaIJVaEeGHteb7Z9d8Vw" name="instances" type="_mVc30JBXEeGrRv3Fk7EUAw" value="2"/>
+            <value xmi:type="uml:LiteralInteger" xmi:id="_vp4_8JXvEeGAkYy9JBfPbQ" name="instances" type="_mVc30JBXEeGrRv3Fk7EUAw" value="2"/>
           </argument>
           <result xmi:id="_8iOfAJUYEeGHteb7Z9d8Vw" name="create" outgoing="_R-joQJUaEeGHteb7Z9d8Vw" inPartition="_JgXpQI3uEeGI9c0uZUYdNQ" type="_5J44IY3vEeGI9c0uZUYdNQ"/>
           <result xmi:id="_8iPtIJUYEeGHteb7Z9d8Vw" name="end" outgoing="_bP0_UJUaEeGHteb7Z9d8Vw" inPartition="_JgXpQI3uEeGI9c0uZUYdNQ"/>

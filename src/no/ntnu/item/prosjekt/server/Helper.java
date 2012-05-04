@@ -27,7 +27,7 @@ public class Helper {
 		for (int i = 0; i < plass; i++) {
 			kopi[i] = liste[i];	
 		}
-		for (int i = plass+1; i < kopi.length; i++) {
+		for (int i = plass; i < kopi.length; i++) {
 			kopi[i] = liste[i+1];
 		}
 		return kopi;
@@ -46,7 +46,7 @@ public class Helper {
 		for (int i = 0; i < plass; i++) {
 			kopi[i] =  taxiListe[i];
 		}
-		for (int i = plass+1; i < kopi.length; i++) {
+		for (int i = plass; i < kopi.length; i++) {
 			kopi[i] = taxiListe[i+1];
 		}
 		return kopi;
@@ -86,7 +86,7 @@ public class Helper {
 		for (int i = 0; i < plass; i++) {
 			kopi[i] = liste[i];
 		}
-		for (int i = plass+1; i < kopi.length; i++) {
+		for (int i = plass; i < kopi.length; i++) {
 			kopi[i]=liste[i+1];
 		}
 		return kopi;

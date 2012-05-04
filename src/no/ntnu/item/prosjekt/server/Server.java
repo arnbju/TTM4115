@@ -119,8 +119,6 @@ public class Server extends Block {
 			if(bil.getTxid() == ordreList[i].getTxid()){
 				bil.setState("Busy");
 				bil.setBesked("Du har avvist ordren fra kunde: " + ordreList[i].getMsid() + "\n Og din state er nå satt til " + bil.getState());
-				ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
-				busyTaxier = Helper.addTaxi(busyTaxier, bil);
 				eksisterer = true;
 				processOrder(ordreList[i]);
 				break;
@@ -158,19 +156,22 @@ public class Server extends Block {
 	}
 
 	public Taxi processOrder(Order ordre) {
+		System.out.println("LedigeTaxier: " + ledigeTaxier.length + " BusyTaxier: " + busyTaxier.length + " OrderID: " +ordre.getMsid());
 		int taxiBil = 0; //henter bilen som har vært lengst ledig
 		Taxi bil = ledigeTaxier[taxiBil];
 		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
 		bil.setMsid(ordre.getMsid());
 		bil.setState("Busy");
 		
-		ordre.setTxid(ledigeTaxier[taxiBil].getTxid());
-		ordreList = Helper.addOrder(ordreList, ordre);
+		if(ordre.getTxid()==null){
+				ordreList = Helper.addOrder(ordreList, ordre);
+		}
+		ordre.setTxid(bil.getTxid());
 		
 		ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
 		busyTaxier = Helper.addTaxi(busyTaxier, bil);
 		
-		System.out.println("Ordre lagt til: " + ordreList[0].getMsid());
+		System.out.println("Ordre lagt til: " + ordreList[0].getMsid() + " og sendt til taxi: " + bil.getTxid());
 		
 		return bil;
 		
