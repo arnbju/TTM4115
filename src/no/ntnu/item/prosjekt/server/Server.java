@@ -67,7 +67,7 @@ public class Server extends Block {
 				
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			if(bil.getTxid() == ledigeTaxier[i].getTxid()){
-				ledigeTaxier = Helper.fjernTaxi(ledigeTaxier, bil);
+				ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
 				
 				break;	 
 			}
