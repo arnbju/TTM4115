@@ -6,15 +6,12 @@ import no.ntnu.item.prosjekt.taxiclient.Taxi;
 public class Helper {
 	
 	public static Order[] addOrder(Order[] liste, Order ordre){
-		
 		Order[] kopi = new Order[liste.length + 1];
+		kopi[liste.length] = ordre;
 		
 		for (int i = 0; i < liste.length; i++) {
 			kopi[i] = liste[i];
 		}
-			
-		kopi[liste.length -1] = ordre;
-				
 		return kopi;
 	}
 	
@@ -33,7 +30,7 @@ public class Helper {
 		for (int i = plass+1; i < kopi.length; i++) {
 			kopi[i] = liste[i+1];
 		}
-		return liste;
+		return kopi;
 	}
 	
 	public static Taxi[] removeTaxi(Taxi[] taxiListe, Taxi taxiBil){ // metode for å fjerne en taxi fra en Taxi-liste
@@ -73,7 +70,7 @@ public class Helper {
 		for (int i = 0; i < liste.length; i++) {
 			kopi[i] = liste[i];
 		}
-		return liste;
+		return kopi;
 	}
 	
 	public static String[] removeString(String[] liste, String string){
