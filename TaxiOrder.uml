@@ -133,6 +133,7 @@
             <transition xmi:id="_fPLWoJYTEeGQRcoRPsnv1g" name="accept / state+orderACK" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_BHtP8JYXEeGQRcoRPsnv1g" name="busy / orderACK+console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_BHueEJYXEeGQRcoRPsnv1g" name="busy / orderACK+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_uJWukJYhEeGtR6AMhiFLuw" name="cancel / state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
           </region>
         </ownedBehavior>
         <ownedParameter xmi:id="_HUPRc44FEeGUaqQDHfFebA" name="init"/>
@@ -482,4 +483,5 @@
   <arctis:event xmi:id="_fPLWoZYTEeGQRcoRPsnv1g" base_Transition="_fPLWoJYTEeGQRcoRPsnv1g" triggers="_vptt8pU4EeGHteb7Z9d8Vw" effects="_vpvjIpU4EeGHteb7Z9d8Vw _HUPRdo4FEeGUaqQDHfFebA"/>
   <arctis:event xmi:id="_BHtP8ZYXEeGQRcoRPsnv1g" base_Transition="_BHtP8JYXEeGQRcoRPsnv1g" triggers="_vpuVAZU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_BHueEZYXEeGQRcoRPsnv1g" base_Transition="_BHueEJYXEeGQRcoRPsnv1g" triggers="_vpuVAZU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_uJX8sJYhEeGtR6AMhiFLuw" base_Transition="_uJWukJYhEeGtR6AMhiFLuw" triggers="_1SwE8JU2EeGHteb7Z9d8Vw" effects="_vpvjIpU4EeGHteb7Z9d8Vw"/>
 </xmi:XMI>

@@ -52,10 +52,7 @@ public class Server extends Block {
 		return "Client med id " + ordre.getMsid() + " har spurt om kønr";
 	}
 
-	public Order cancelReturn(Order ordre) {
-		ordre.setAck("Din ordre er kanselert ");
-		return ordre;
-	}
+
 
 	public String cancelConsole(Order ordre) {
 		return "Klient med id " + ordre.getMsid() + " har kanselert bestillingen";
@@ -256,5 +253,54 @@ public class Server extends Block {
 		return orderCarrier;
 	}
 
+	public boolean cancelOrder(Order order) {
+		Taxi bil;
+		boolean eksisterer = false;
+		orderCarrier = order;
+		
+		for (int i = 0; i < ordreList.length; i++) {
+			if(order.getMsid() == ordreList[i].getMsid()){
+				ordreList = Helper.removeOrder(ordreList, order);
+			}
+		}
+		
+		for (int i = 0; i < queueList.length; i++) {
+			if(order.getMsid() == queueList[i].getMsid()){
+				queueList = Helper.removeOrder(queueList, order);
+				eksisterer = true;
+			}else{
+				
+			}
+		}
+		
+		if(eksisterer == false){
+			for (int j = 0; j < busyTaxier.length; j++) {
+					if(busyTaxier[j].getMsid() == order.getMsid()){
+						bil = busyTaxier[j];
+						taxiCarrier = busyTaxier[j].getTxid();
+						bil.setBesked("Ordre fra kunde ble kanselert");
+						
+					}
+				}
+		}
+		return eksisterer;
+	}
+
+	public Taxi cancelTaxi(boolean b) {
+		Taxi bil = new Taxi("FAKE");
+		for (int i = 0; i < busyTaxier.length; i++) {
+			if(busyTaxier[i].getMsid()==taxiCarrier){
+				bil = busyTaxier[i];
+			}
+			
+		}
+		bil.setState("Free");
+		return bil;
+	}
+
+	public Order cancelQueue(boolean b) {
+		
+		return orderCarrier;
+	}
 
 }
