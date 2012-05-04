@@ -14,10 +14,18 @@ public class Server extends Block {
 	
 
 
-	public Order confirmOrder(Order input) {
+	public Order confirmOrder(Taxi input) {
 		System.out.println("Dette er inni confirm order: " + input.getMsid());
-		input.setAck("Din ordre er mottatt, du har id: " + input.getMsid());
-		return input;
+		if(input.getState()=="Queue"){
+			int plass = Helper.getQueueNr(orderCarrier, queueList) +1;
+			orderCarrier.setAck("Du er nr " + plass + " i køen");
+			return orderCarrier;
+			
+		}else{
+		
+		orderCarrier.setAck("Din ordre er mottatt, du har id: " + input.getMsid());
+		return orderCarrier;
+		}
 	}
 
 	public String consoleUtput(Order ordre) {
@@ -206,10 +214,24 @@ public class Server extends Block {
 		}
 	}
 
-	public void addToQueue(boolean b) {
+	public Taxi addToQueue(boolean b) {
 		queueList = Helper.addOrder(queueList, orderCarrier);
+		Taxi fake = new Taxi("TXID1337");
+		fake.setState("Queue");
+		fake.setMsid(orderCarrier.getMsid());
+		return fake;
 	}
 
-	public void temp() {
+	public boolean getFromQueue(Taxi bil) {
+		if(queueList.length>0){
+			orderCarrier = queueList[0];
+			queueList = Helper.removeOrder(queueList, orderCarrier);
+			return true;
+		}else{
+			return false;
+		}
+		
 	}
+
+
 }

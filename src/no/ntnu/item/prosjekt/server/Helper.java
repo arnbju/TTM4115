@@ -91,4 +91,14 @@ public class Helper {
 		}
 		return kopi;
 	}
+	
+	public static int getQueueNr(Order ordre, Order[] liste){
+		int plass = 0;
+		for (int i = 0; i < liste.length; i++) {
+			if(ordre.getMsid() == liste[i].getMsid()){
+				plass = i;
+			}
+		}
+		return plass;
+	}
 }
