@@ -34,8 +34,17 @@ public class Server extends Block {
 	}
 
 	public Order queueNrReturn(Order ordre) {
-	//	System.out.println("Du står ikke i kø");
+		
 		ordre.setAck("Du står ikke i kø");
+		
+			for (int i = 0; i < queueList.length; i++) {
+				if(ordre.getMsid()==queueList[i].getMsid()){
+					i++;
+					ordre.setAck("Du er nr "+ i +" i køen");
+					break;
+				}
+			}
+		
 		return ordre;
 	}
 
@@ -231,6 +240,20 @@ public class Server extends Block {
 			return false;
 		}
 		
+	}
+
+	public boolean taxiDeny(Taxi bil) {
+		if(bil.getMsid()=="Avvist"){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+
+	public Order taxiDenyOrder(boolean b) {
+	
+		return orderCarrier;
 	}
 
 

@@ -119,13 +119,20 @@
             <transition xmi:id="_3-n4gJU6EeGHteb7Z9d8Vw" name="accept / " source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_3-pGoJU6EeGHteb7Z9d8Vw" name="busy / " source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_3-ptsJU6EeGHteb7Z9d8Vw" name="free / " source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
-            <transition xmi:id="_3-qUwJU6EeGHteb7Z9d8Vw" name="free / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
             <transition xmi:id="_HK9uwJVaEeGHteb7Z9d8Vw" name="append / orderACK+console" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
-            <transition xmi:id="_Q174cJXMEeGHteb7Z9d8Vw" name="logOn / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
-            <transition xmi:id="_Q1-UsJXMEeGHteb7Z9d8Vw" name="logOut / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
-            <transition xmi:id="_Q2Aw8JXMEeGHteb7Z9d8Vw" name="accept / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
-            <transition xmi:id="_Q2DNMJXMEeGHteb7Z9d8Vw" name="busy / console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
-            <transition xmi:id="_kdH1QJXeEeGVbJ5xC55LgA" name="accept / orderACK+console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_Yk6TgJYSEeGQRcoRPsnv1g" name="free / state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_Yk8vwJYSEeGQRcoRPsnv1g" name="logOn / state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_Yk994JYSEeGQRcoRPsnv1g" name="logOut / state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_Yk-k8JYSEeGQRcoRPsnv1g" name="accept / state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_Yk_zEJYSEeGQRcoRPsnv1g" name="busy / state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_YlBBMJYSEeGQRcoRPsnv1g" name="accept / orderACK+console" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_492JsJYSEeGQRcoRPsnv1g" name="logOn / orderACK+console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_fPHsQJYTEeGQRcoRPsnv1g" name="free / orderACK+console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_fPI6YJYTEeGQRcoRPsnv1g" name="free / orderACK+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_fPKIgJYTEeGQRcoRPsnv1g" name="logOn / orderACK+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_fPLWoJYTEeGQRcoRPsnv1g" name="accept / state+orderACK" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_BHtP8JYXEeGQRcoRPsnv1g" name="busy / orderACK+console+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
+            <transition xmi:id="_BHueEJYXEeGQRcoRPsnv1g" name="busy / orderACK+state" source="_aoB1UI4QEeGUaqQDHfFebA" target="_aoB1UI4QEeGUaqQDHfFebA"/>
           </region>
         </ownedBehavior>
         <ownedParameter xmi:id="_HUPRc44FEeGUaqQDHfFebA" name="init"/>
@@ -460,12 +467,19 @@
   <arctis:event xmi:id="_3-ofkJU6EeGHteb7Z9d8Vw" base_Transition="_3-n4gJU6EeGHteb7Z9d8Vw" triggers="_vptt8pU4EeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_3-pGoZU6EeGHteb7Z9d8Vw" base_Transition="_3-pGoJU6EeGHteb7Z9d8Vw" triggers="_vpuVAZU4EeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_3-ptsZU6EeGHteb7Z9d8Vw" base_Transition="_3-ptsJU6EeGHteb7Z9d8Vw" triggers="_vpu8EJU4EeGHteb7Z9d8Vw"/>
-  <arctis:event xmi:id="_3-qUwZU6EeGHteb7Z9d8Vw" base_Transition="_3-qUwJU6EeGHteb7Z9d8Vw" triggers="_vpu8EJU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_YL9l4ZU_EeGHteb7Z9d8Vw" base_Transition="_YL9l4JU_EeGHteb7Z9d8Vw" effects="_7lbDEJUZEeGHteb7Z9d8Vw _7lWKkJUZEeGHteb7Z9d8Vw"/>
   <arctis:event xmi:id="_HK-V0JVaEeGHteb7Z9d8Vw" base_Transition="_HK9uwJVaEeGHteb7Z9d8Vw" triggers="_HUPRdI4FEeGUaqQDHfFebA" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw"/>
-  <arctis:event xmi:id="_Q18fgJXMEeGHteb7Z9d8Vw" base_Transition="_Q174cJXMEeGHteb7Z9d8Vw" triggers="_vpsf0JU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
-  <arctis:event xmi:id="_Q1-7wJXMEeGHteb7Z9d8Vw" base_Transition="_Q1-UsJXMEeGHteb7Z9d8Vw" triggers="_vptt8JU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
-  <arctis:event xmi:id="_Q2BYAJXMEeGHteb7Z9d8Vw" base_Transition="_Q2Aw8JXMEeGHteb7Z9d8Vw" triggers="_vptt8pU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
-  <arctis:event xmi:id="_Q2DNMZXMEeGHteb7Z9d8Vw" base_Transition="_Q2DNMJXMEeGHteb7Z9d8Vw" triggers="_vpuVAZU4EeGHteb7Z9d8Vw" effects="_vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
-  <arctis:event xmi:id="_kdJqcJXeEeGVbJ5xC55LgA" base_Transition="_kdH1QJXeEeGVbJ5xC55LgA" triggers="_vptt8pU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_Yk7hoJYSEeGQRcoRPsnv1g" base_Transition="_Yk6TgJYSEeGQRcoRPsnv1g" triggers="_vpu8EJU4EeGHteb7Z9d8Vw" effects="_vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_Yk8vwZYSEeGQRcoRPsnv1g" base_Transition="_Yk8vwJYSEeGQRcoRPsnv1g" triggers="_vpsf0JU4EeGHteb7Z9d8Vw" effects="_vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_Yk994ZYSEeGQRcoRPsnv1g" base_Transition="_Yk994JYSEeGQRcoRPsnv1g" triggers="_vptt8JU4EeGHteb7Z9d8Vw" effects="_vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_Yk_MAJYSEeGQRcoRPsnv1g" base_Transition="_Yk-k8JYSEeGQRcoRPsnv1g" triggers="_vptt8pU4EeGHteb7Z9d8Vw" effects="_vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_Yk_zEZYSEeGQRcoRPsnv1g" base_Transition="_Yk_zEJYSEeGQRcoRPsnv1g" triggers="_vpuVAZU4EeGHteb7Z9d8Vw" effects="_vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_YlBBMZYSEeGQRcoRPsnv1g" base_Transition="_YlBBMJYSEeGQRcoRPsnv1g" triggers="_vptt8pU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_492wwJYSEeGQRcoRPsnv1g" base_Transition="_492JsJYSEeGQRcoRPsnv1g" triggers="_vpsf0JU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_fPHsQZYTEeGQRcoRPsnv1g" base_Transition="_fPHsQJYTEeGQRcoRPsnv1g" triggers="_vpu8EJU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_fPI6YZYTEeGQRcoRPsnv1g" base_Transition="_fPI6YJYTEeGQRcoRPsnv1g" triggers="_vpu8EJU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_fPKIgZYTEeGQRcoRPsnv1g" base_Transition="_fPKIgJYTEeGQRcoRPsnv1g" triggers="_vpsf0JU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_fPLWoZYTEeGQRcoRPsnv1g" base_Transition="_fPLWoJYTEeGQRcoRPsnv1g" triggers="_vptt8pU4EeGHteb7Z9d8Vw" effects="_vpvjIpU4EeGHteb7Z9d8Vw _HUPRdo4FEeGUaqQDHfFebA"/>
+  <arctis:event xmi:id="_BHtP8ZYXEeGQRcoRPsnv1g" base_Transition="_BHtP8JYXEeGQRcoRPsnv1g" triggers="_vpuVAZU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIJU4EeGHteb7Z9d8Vw _vpvjIpU4EeGHteb7Z9d8Vw"/>
+  <arctis:event xmi:id="_BHueEZYXEeGQRcoRPsnv1g" base_Transition="_BHueEJYXEeGQRcoRPsnv1g" triggers="_vpuVAZU4EeGHteb7Z9d8Vw" effects="_HUPRdo4FEeGUaqQDHfFebA _vpvjIpU4EeGHteb7Z9d8Vw"/>
 </xmi:XMI>
