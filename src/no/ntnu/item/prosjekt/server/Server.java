@@ -101,6 +101,8 @@ public class Server extends Block {
 			System.out.println("Ordreid: " + ordreList[i].getMsid() + " TaxiID: " + ordreList[i].getTxid());
 			if(bil.getTxid() == ordreList[i].getTxid()){
 				bil.setBesked("Du skal hente kunde med id: " + ordreList[i].getMsid() + "på adresse x");
+				ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
+				busyTaxier = Helper.addTaxi(busyTaxier, bil);
 				harOrdre = true;
 			}
 		}
