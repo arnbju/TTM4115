@@ -8,6 +8,7 @@ import no.ntnu.item.prosjekt.taxiclient.Taxi;
 
 public class Server extends Block {
 	public 		Taxi[] ledigeTaxier = new Taxi[0];
+	public		Taxi[] busyTaxier = new Taxi[0];
 	public		Order[] ordreList = new Order[0];
 	public 		String[] queueList = new String[0];
 	
@@ -55,7 +56,15 @@ public class Server extends Block {
 			ledigeTaxier = Helper.addTaxi(ledigeTaxier, bil);
 			bil.setBesked("Du har blitt logget på systemet");
 			bil.setState("Free");
-		}		
+		}	
+			
+		if(queueList.length != 0){
+			for (int i = 0; i < ordreList.length; i++) {
+				if(ordreList[i].getMsid()==queueList[0]){
+					processOrder(ordreList[i]);
+				}
+			}
+		}
 		
 		for (int i = 0; i < ledigeTaxier.length; i++) { //sysout for feilsøking
 			System.out.println("Taxi " + ledigeTaxier[i].getTxid() + " er ledig. Plass i array er" + i);
@@ -97,11 +106,43 @@ public class Server extends Block {
 	}
 
 	public Taxi taxiBusy(Taxi bil) {
+		boolean eksisterer = false;
+		for (int i = 0; i < ordreList.length; i++) {
+			if(bil.getTxid() == ordreList[i].getTxid()){
+				bil.setState("Busy");
+				bil.setBesked("Du har avvist ordren fra kunde: " + ordreList[i].getMsid() + "\n Og din state er nå satt til " + bil.getState());
+				ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
+				busyTaxier = Helper.addTaxi(busyTaxier, bil);
+				eksisterer = true;
+				processOrder(ordreList[i]);
+				break;
+			}
+		}
+		if(eksisterer == false){
+			bil.setState("Busy");
+			bil.setBesked("Din state er nå " + bil.getState());
+			ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
+			busyTaxier = Helper.addTaxi(busyTaxier, bil);
+			
+		}
+		
 		bil.setToConsole("Taxi med id " + bil.getTxid() + " er busy, action: " + bil.getAction());
 		return bil;
 	}
 
 	public Taxi taxiFree(Taxi bil) {
+		if(bil.getState()=="Busy"){
+			bil.setState("Free");
+			bil.setBesked("Du er nå i state Free");
+			ledigeTaxier = Helper.addTaxi(ledigeTaxier, bil);
+			busyTaxier = Helper.removeTaxi(busyTaxier, bil);
+			
+		}else if(bil.getState()=="Free"){
+			bil.setBesked("Du er allerde i staten Free");
+		}
+		else{
+			bil.setBesked("Du er i den ukjente staten: " + bil.getState());
+		}
 		bil.setToConsole("Taxi med id " + bil.getTxid() + " er nå ledig, action: " + bil.getAction());
 		return bil;
 	}
