@@ -53,6 +53,7 @@ public class Server extends Block {
 		
 		if(eksisterer == false){
 			ledigeTaxier = Helper.addTaxi(ledigeTaxier, bil);
+			bil.setBesked("Du har blitt logget på systemet");
 			bil.setState("Free");
 		}		
 		
@@ -82,6 +83,7 @@ public class Server extends Block {
 	public Taxi taxiAccept(Taxi bil) {
 		boolean harOrdre = false;
 		for (int i = 0; i < ordreList.length; i++) {
+			System.out.println("Ordreid: " + ordreList[i].getMsid() + " TaxiID: " + ordreList[i].getTxid());
 			if(bil.getTxid() == ordreList[i].getTxid()){
 				bil.setBesked("Du skal hente kunde med id: " + ordreList[i].getMsid() + "på adresse x");
 				harOrdre = true;
@@ -105,8 +107,12 @@ public class Server extends Block {
 	}
 
 	public Taxi processOrder(Order ordre) {
-		Taxi bil = ledigeTaxier[0];
+		int taxiBil = 0; //henter bilen som har vært lengst ledig
+		Taxi bil = ledigeTaxier[taxiBil];
 		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
+		ordre.setTxid(ledigeTaxier[taxiBil].getTxid());
+		ordreList = Helper.addOrder(ordreList, ordre);
+		System.out.println("Ordre lagt til: " + ordreList[0].getMsid());
 		
 		return bil;
 		
