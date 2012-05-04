@@ -9,6 +9,7 @@ import no.ntnu.item.prosjekt.taxiclient.Taxi;
 public class Server extends Block {
 	public 		Taxi[] ledigeTaxier = new Taxi[0];
 	public		Order[] ordreList = new Order[0];
+	public 		String[] queueList = new String[0];
 	
 
 
@@ -42,23 +43,27 @@ public class Server extends Block {
 		return "Klient med id " + ordre.getMsid() + " har kanselert bestillingen";
 	}
 
-	public String taxiLogOn(Taxi bil) {
+	public Taxi taxiLogOn(Taxi bil) {
+		boolean eksisterer = false;
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			if (ledigeTaxier[i].getTxid() == bil.getTxid()){
-				ledigeTaxier = Helper.addTaxi(ledigeTaxier, bil);
 				break;
 			}
+		}
+		
+		if(eksisterer == false){
+			ledigeTaxier = Helper.addTaxi(ledigeTaxier, bil);
 		}		
 		
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			System.out.println("Taxi " + ledigeTaxier[i].getTxid() + " er ledig. Plass i array er" + i);
 		}
-		
-		
-		return "Taxi med id: " + bil.getTxid() + " har logget på, action: " + bil.getAction();
+				
+		bil.setToConsole("Taxi med id: " + bil.getTxid() + " har logget på, action: " + bil.getAction());
+		return bil;
 	}
 
-	public String taxiLogOut(Taxi bil) {
+	public Taxi taxiLogOut(Taxi bil) {
 				
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			if(bil.getTxid() == ledigeTaxier[i].getTxid()){
@@ -69,29 +74,34 @@ public class Server extends Block {
 		}
 		
 		
-		return "Taxi med id: " + bil.getTxid() + " har logget av, action: " + bil.getAction();
-	}
-
-	public String taxiAccept(Taxi bil) {
-		return "Taxi med id " + bil.getTxid() + " har akseptert, action: " + bil.getAction();
-	}
-
-	public String taxiBusy(Taxi bil) {
-		return "Taxi med id " + bil.getTxid() + " er busy, action: " + bil.getAction();
-	}
-
-	public String taxiFree(Taxi bil) {
-		return "Taxi med id " + bil.getTxid() + " er nå ledig, action: " + bil.getAction();
-	}
-
-	public Taxi dummy(Taxi bil) {
-		bil.setAction("Dummy info");
+		bil.setToConsole("Taxi med id: " + bil.getTxid() + " har logget av, action: " + bil.getAction());
 		return bil;
 	}
-	
 
-	
+	public Taxi taxiAccept(Taxi bil) {
+		boolean harOrdre = false;
+		for (int i = 0; i < ordreList.length; i++) {
+			if(bil.getTxid() == ordreList[i].getTxid()){
+				bil.setBesked("Du skal hente kunde med id: " + ordreList[i].getMsid() + "på adresse x");
+				harOrdre = true;
+			}
+		}
+		if (harOrdre == false){
+			bil.setBesked("Du har ingen ventende ordre");
+		}
+		bil.setToConsole("Taxi med id " + bil.getTxid() + " har akseptert, action: " + bil.getAction());
+		return bil;
+	}
 
+	public Taxi taxiBusy(Taxi bil) {
+		bil.setToConsole("Taxi med id " + bil.getTxid() + " er busy, action: " + bil.getAction());
+		return bil;
+	}
+
+	public Taxi taxiFree(Taxi bil) {
+		bil.setToConsole("Taxi med id " + bil.getTxid() + " er nå ledig, action: " + bil.getAction());
+		return bil;
+	}
 
 	public Taxi processOrder(Order ordre) {
 		Taxi bil = ledigeTaxier[0];
@@ -99,6 +109,10 @@ public class Server extends Block {
 		
 		return bil;
 		
+	}
+
+	public String toConsole(Taxi bil) {
+		return bil.getToConsole();
 	}
 		
 		

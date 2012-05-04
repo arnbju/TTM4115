@@ -5,6 +5,8 @@ public class Order {
 	private String ack;
 	private String queue;
 	private String request;
+	private String toConsole;
+	private String txid;
 	
 	public String getRequest() {
 		return request;
@@ -40,6 +42,22 @@ public class Order {
 
 	public void setQueue(String queue) {
 		this.queue = queue;
+	}
+
+	public String getToConsole() {
+		return toConsole;
+	}
+
+	public void setToConsole(String toConsole) {
+		this.toConsole = toConsole;
+	}
+
+	public String getTxid() {
+		return txid;
+	}
+
+	public void setTxid(String txid) {
+		this.txid = txid;
 	}
 
 
