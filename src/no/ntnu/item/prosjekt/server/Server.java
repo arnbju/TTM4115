@@ -10,7 +10,7 @@ public class Server extends Block {
 	public 		Taxi[] ledigeTaxier = new Taxi[0];
 	public		Taxi[] busyTaxier = new Taxi[0];
 	public		Order[] ordreList = new Order[0];
-	public 		String[] queueList = new String[0];
+	public 		Order[] queueList = new Order[0];
 	
 
 
@@ -65,7 +65,7 @@ public class Server extends Block {
 		if(queueList.length != 0){
 			for (int i = 0; i < ordreList.length; i++) {
 				if(ordreList[i].getMsid()==queueList[0]){
-					processOrder(ordreList[i]);
+					//processOrder(ordreList[i]);
 				}
 			}
 		}
@@ -122,7 +122,7 @@ public class Server extends Block {
 				ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
 				busyTaxier = Helper.addTaxi(busyTaxier, bil);
 				eksisterer = true;
-				processOrder(ordreList[i]);
+				//processOrder(ordreList[i]);
 				break;
 			}
 		}
@@ -158,26 +158,20 @@ public class Server extends Block {
 	}
 
 	public Taxi processOrder(boolean b) {
-		
-		
-		int taxiBil = 0; //henter bilen som har vært lengst ledig
-		Taxi bil = ledigeTaxier[taxiBil];
-		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
-		bil.setMsid(ordre.getMsid());
+		Taxi bil = ledigeTaxier[0];
+		bil.setBesked("Kan du hente kunde med id: "+ orderCarrier.getMsid());
+		bil.setMsid(orderCarrier.getMsid());			
 		bil.setState("Busy");
 		
-		ordre.setTxid(ledigeTaxier[taxiBil].getTxid());
-		ordreList = Helper.addOrder(ordreList, ordre);
-		
+		orderCarrier.setTxid(bil.getTxid());
 		ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
 		busyTaxier = Helper.addTaxi(busyTaxier, bil);
 		
 		System.out.println("Ordre lagt til: " + ordreList[0].getMsid());
 		
-		return bil;
+		return bil;	
+		}
 		
-	}
-
 	public String toConsole(Taxi bil) {
 		return bil.getToConsole();
 	}
@@ -194,17 +188,24 @@ public class Server extends Block {
 		return o;
 	}
 
-		public String idCarrier;
+		public Order orderCarrier;
+		public String taxiCarrier;
 		
 	public boolean isTaxiFree(Order order) {
+		orderCarrier = order;
+		ordreList = Helper.addOrder(ordreList, order);
+		
 		if (ledigeTaxier.length > 0){
-			idCarrier = ledigeTaxier[0].getTxid();
+			taxiCarrier = ledigeTaxier[0].getTxid();
 			return true;
 		}
 		else{
-			idCarrier = order.getMsid();
 			return false;
 		}
+	}
+
+	public void addToQueue(boolean b) {
+		queueList = Helper.addOrder(queueList, orderCarrier);
 	}
 
 	public void temp() {
