@@ -53,9 +53,10 @@ public class Server extends Block {
 		
 		if(eksisterer == false){
 			ledigeTaxier = Helper.addTaxi(ledigeTaxier, bil);
+			bil.setState("Free");
 		}		
 		
-		for (int i = 0; i < ledigeTaxier.length; i++) {
+		for (int i = 0; i < ledigeTaxier.length; i++) { //sysout for feilsøking
 			System.out.println("Taxi " + ledigeTaxier[i].getTxid() + " er ledig. Plass i array er" + i);
 		}
 				
@@ -67,7 +68,7 @@ public class Server extends Block {
 				
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			if(bil.getTxid() == ledigeTaxier[i].getTxid()){
-				ledigeTaxier = Helper.fjernTaxi(ledigeTaxier, bil);
+				ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
 				
 				break;	 
 			}
