@@ -118,6 +118,7 @@ public class Server extends Block {
 		for (int i = 0; i < ordreList.length; i++) {
 			if(bil.getTxid() == ordreList[i].getTxid()){
 				bil.setState("Busy");
+				bil.setMsid("Avvist");
 				bil.setBesked("Du har avvist ordren fra kunde: " + ordreList[i].getMsid() + "\n Og din state er nå satt til " + bil.getState());
 				eksisterer = true;
 				processOrder(ordreList[i]);
