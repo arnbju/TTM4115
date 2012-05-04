@@ -45,9 +45,11 @@ public class Server extends Block {
 	}
 
 	public Taxi taxiLogOn(Taxi bil) {
+		System.out.println("Ledige taxier har lengde: " + ledigeTaxier.length);
 		boolean eksisterer = false;
 		for (int i = 0; i < ledigeTaxier.length; i++) {
 			if (ledigeTaxier[i].getTxid() == bil.getTxid()){
+				eksisterer = true;
 				break;
 			}
 		}
@@ -77,7 +79,7 @@ public class Server extends Block {
 	}
 
 	public Taxi taxiLogOut(Taxi bil) {
-				
+		System.out.println("Ledige taxier har lengde: " + ledigeTaxier.length);
 		if(bil.getState()=="Free"){
 			ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
 			bil.setState("Logged Off");
@@ -122,7 +124,7 @@ public class Server extends Block {
 				break;
 			}
 		}
-		if(eksisterer == false){
+		if(eksisterer == false && bil.getState()!="Busy"){
 			bil.setState("Busy");
 			bil.setBesked("Din state er nå " + bil.getState());
 			ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
