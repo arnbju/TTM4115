@@ -87,7 +87,7 @@ public class Server extends Block {
 			busyTaxier = Helper.removeTaxi(busyTaxier, bil);
 			bil.setState("Logged Off");
 		}else{
-			bil.setState("Du har den ukjente staten: " + bil.getState());
+			bil.setBesked("Du har den ukjente staten: " + bil.getState());
 		}
 		
 		
@@ -101,19 +101,19 @@ public class Server extends Block {
 			System.out.println("Ordreid: " + ordreList[i].getMsid() + " TaxiID: " + ordreList[i].getTxid());
 			if(bil.getTxid() == ordreList[i].getTxid()){
 				bil.setBesked("Du skal hente kunde med id: " + ordreList[i].getMsid() + "på adresse x");
-				ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
-				busyTaxier = Helper.addTaxi(busyTaxier, bil);
 				harOrdre = true;
 			}
 		}
 		if (harOrdre == false){
 			bil.setBesked("Du har ingen ventende ordre");
 		}
-		bil.setToConsole("Taxi med id " + bil.getTxid() + " har akseptert, action: " + bil.getAction());
+		bil.setToConsole("Taxi med id " + bil.getTxid() + " har akseptert, action: " + bil.getAction() + "\n Ledige taxier: " + ledigeTaxier.length + " Busy Taxier: " + busyTaxier.length);
 		return bil;
 	}
 
 	public Taxi taxiBusy(Taxi bil) {
+		System.out.println("-------");
+		System.out.println(bil.getState());
 		boolean eksisterer = false;
 		for (int i = 0; i < ordreList.length; i++) {
 			if(bil.getTxid() == ordreList[i].getTxid()){
@@ -126,32 +126,34 @@ public class Server extends Block {
 				break;
 			}
 		}
-		if(eksisterer == false && bil.getState()!="Busy"){
+		if(eksisterer == false && bil.getState()=="Free"){
 			bil.setState("Busy");
 			bil.setBesked("Din state er nå " + bil.getState());
 			ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
 			busyTaxier = Helper.addTaxi(busyTaxier, bil);
 			
+			System.out.println("Taxi med id: " +bil.getTxid() + "er nå endret til " + bil.getState());
+			
 		}
 		
-		bil.setToConsole("Taxi med id " + bil.getTxid() + " er busy, action: " + bil.getAction());
+		bil.setToConsole("Taxi med id " + bil.getTxid() + " er "+ bil.getState()+ ", action: " + bil.getAction());
 		return bil;
 	}
 
 	public Taxi taxiFree(Taxi bil) {
-		if(bil.getState()=="Busy"){
+		if(bil.getState()=="Free"){
+				bil.setBesked("Du er allerde i staten Free");
+		}else if(bil.getState()=="Busy"){
 			bil.setState("Free");
 			bil.setBesked("Du er nå i state Free");
 			ledigeTaxier = Helper.addTaxi(ledigeTaxier, bil);
 			busyTaxier = Helper.removeTaxi(busyTaxier, bil);
-			
-		}else if(bil.getState()=="Free"){
-			bil.setBesked("Du er allerde i staten Free");
+			System.out.println("Taxi med id: " + bil.getTxid() + "er nå endret til " + bil.getState());
 		}
 		else{
 			bil.setBesked("Du er i den ukjente staten: " + bil.getState());
 		}
-		bil.setToConsole("Taxi med id " + bil.getTxid() + " er nå ledig, action: " + bil.getAction());
+		bil.setToConsole("Taxi med id " + bil.getTxid() + " er nå "+bil.getState()+", action: " + bil.getAction());
 		return bil;
 	}
 
@@ -160,8 +162,14 @@ public class Server extends Block {
 		Taxi bil = ledigeTaxier[taxiBil];
 		bil.setBesked("Vil du hente kunde med id: " + ordre.getMsid());
 		bil.setMsid(ordre.getMsid());
+		bil.setState("Busy");
+		
 		ordre.setTxid(ledigeTaxier[taxiBil].getTxid());
 		ordreList = Helper.addOrder(ordreList, ordre);
+		
+		ledigeTaxier = Helper.removeTaxi(ledigeTaxier, bil);
+		busyTaxier = Helper.addTaxi(busyTaxier, bil);
+		
 		System.out.println("Ordre lagt til: " + ordreList[0].getMsid());
 		
 		return bil;

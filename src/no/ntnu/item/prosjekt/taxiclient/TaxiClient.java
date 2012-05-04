@@ -35,7 +35,6 @@ public class TaxiClient extends Block {
 	}
 
 	public Taxi busyID(String action) {
-		denneTaxi.setState("Busy");
 		denneTaxi.setAction(action);
 		return denneTaxi;
 	}
@@ -46,7 +45,6 @@ public class TaxiClient extends Block {
 	}
 
 	public Taxi freeID(String action) {
-		denneTaxi.setState("Free");
 		denneTaxi.setAction(action);
 		return denneTaxi;
 	}
